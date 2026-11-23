@@ -7,349 +7,237 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="header">
-    <div class="header-inner">
-      <h1>保有資格一覧 ＆ 合格対策</h1>
-      <p>私が取得した10個の国家資格の概要と合格率の目安、それぞれの勉強法を分野別にまとめています。※勉強法には個人差があります。</p>
-    </div>
+  <header>
+    <h1>保有資格一覧 ＆ 合格対策</h1>
+    <p>私が取得した10個の国家資格の概要と合格率の目安、それぞれの勉強法を分野別にまとめています。※勉強法には個人差があります。</p>
   </header>
 
-  <main class="container">
-    <!-- 資格数のまとめ（2列） -->
-    <section class="summary-grid" aria-label="資格数のまとめ">
-      <div class="summary-item">
-        <span class="summary-num">10<small>資格</small></span>
-        <span class="summary-label">保有国家資格数（全13区分）</span>
+  <main>
+    <!-- 資格数のまとめ -->
+    <div class="summary">
+      <div class="summary-box">
+        <p class="num">10<span>資格</span></p>
+        <p class="label">保有国家資格数（全13区分）</p>
       </div>
-      <div class="summary-item">
-        <span class="summary-num">5<small>分野</small></span>
-        <span class="summary-label">電気・通信・IT・安全・海洋</span>
+      <div class="summary-box">
+        <p class="num">5<span>分野</span></p>
+        <p class="label">電気・通信・IT・安全・海洋</p>
       </div>
-    </section>
+    </div>
 
-    <!-- 分野別フィルター＆一括開閉 -->
-    <section class="controls" aria-label="表示切り替え">
-      <div class="filter-group">
-        <button type="button" class="filter-btn filter-all is-active" data-filter="all">すべて (10)</button>
-        <button type="button" class="filter-btn filter-elec" data-filter="elec">電気系 (2)</button>
-        <button type="button" class="filter-btn filter-comm" data-filter="comm">無線・通信系 (3)</button>
-        <button type="button" class="filter-btn filter-it" data-filter="it">IT・セキュリティ系 (1)</button>
-        <button type="button" class="filter-btn filter-safe" data-filter="safe">危険物・安全系 (3)</button>
-        <button type="button" class="filter-btn filter-marine" data-filter="marine">海事・操縦系 (1)</button>
+    <!-- 分野別フィルター＆一括開閉ボタン -->
+    <div class="menu">
+      <div class="filters">
+        <button class="filter-btn active" data-type="all">すべて (10)</button>
+        <button class="filter-btn elec" data-type="elec">電気系 (2)</button>
+        <button class="filter-btn comm" data-type="comm">無線・通信系 (3)</button>
+        <button class="filter-btn it" data-type="it">IT・セキュリティ系 (1)</button>
+        <button class="filter-btn safe" data-type="safe">危険物・安全系 (3)</button>
+        <button class="filter-btn marine" data-type="marine">海事・操縦系 (1)</button>
       </div>
-      <button type="button" class="all-toggle-btn" id="allToggleBtn">すべて開く</button>
-    </section>
+      <button id="all-btn">すべて開く</button>
+    </div>
 
     <!-- 資格カード一覧 -->
-    <div class="card-list">
+    <div class="cards">
       <!-- 1. 第三種電気主任技術者 -->
-      <article class="card card-elec" data-category="elec">
-        <div class="card-top">
-          <span class="badge badge-elec">電気系</span>
+      <div class="card elec" data-type="elec">
+        <span class="badge">電気系</span>
+        <h2>第三種電気主任技術者</h2>
+        <p>ビルや工場などの大きな電気設備の工事や安全管理を監督できる国家資格（電験三種）。</p>
+        <div class="tags">
+          <span class="tag rate">合格率の目安：約10〜15%</span>
+          <span class="tag">科目：理論・電力・機械・法規</span>
         </div>
-        <h2 class="qual-title">第三種電気主任技術者</h2>
-        <p class="qual-summary">ビルや工場などの大きな電気設備の工事や安全管理を監督できる国家資格（電験三種）。</p>
-        <div class="meta-tags">
-          <span class="meta-tag meta-rate">合格率の目安：約10〜15%</span>
-          <span class="meta-tag">科目：理論・電力・機械・法規</span>
+        <button class="open-btn">合格対策を見る ▼</button>
+        <div class="advice">
+          <h3>合格対策・勉強法</h3>
+          <ul>
+            <li><strong>勉強する順番：</strong>計算の基本になる「理論」から始めて、次に「電力」「機械」、最後に暗記が多い「法規」の順番で進めるのがおすすめです。</li>
+            <li><strong>過去問を最低10年分解く：</strong>最近の試験は過去問とよく似た問題や、数字だけを変えた問題が多く出ます。最低でも過去問10年分をくり返し解いて、解き方の流れをおぼえるのが合格への近道です。</li>
+            <li><strong>取得後のメリット：</strong>この資格に合格すると、あとで電気工事士を受けるときに学科試験が免除になります。</li>
+          </ul>
         </div>
-
-        <button type="button" class="toggle-btn" aria-expanded="false">
-          <span class="btn-text">合格対策を見る</span>
-          <span class="btn-icon">▼</span>
-        </button>
-
-        <div class="advice-wrapper">
-          <div class="advice-inner">
-            <div class="advice-box">
-              <h3>合格対策・勉強法</h3>
-              <ul>
-                <li><strong>勉強する順番：</strong>計算の基本になる「理論」から始めて、次に「電力」「機械」、最後に暗記が多い「法規」の順番で進めるのがおすすめです。</li>
-                <li><strong>過去問を最低10年分解く：</strong>最近の試験は過去問とよく似た問題や、数字だけを変えた問題が多く出ます。最低でも過去問10年分をくり返し解いて、解き方の流れをおぼえるのが合格への近道です。</li>
-                <li><strong>取得後のメリット：</strong>この資格に合格すると、あとで電気工事士を受けるときに学科試験が免除になります。</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </article>
+      </div>
 
       <!-- 2. 第二種電気工事士 -->
-      <article class="card card-elec" data-category="elec">
-        <div class="card-top">
-          <span class="badge badge-elec">電気系</span>
+      <div class="card elec" data-type="elec">
+        <span class="badge">電気系</span>
+        <h2>第二種電気工事士</h2>
+        <p>住宅やお店などの電気配線やコンセントの工事をするために必要な国家資格。</p>
+        <div class="tags">
+          <span class="tag rate">合格率の目安：学科 約55〜60% / 技能 約65〜70%</span>
+          <span class="tag">試験：学科 ＋ 技能（実技）</span>
         </div>
-        <h2 class="qual-title">第二種電気工事士</h2>
-        <p class="qual-summary">住宅やお店などの電気配線やコンセントの工事をするために必要な国家資格。</p>
-        <div class="meta-tags">
-          <span class="meta-tag meta-rate">合格率の目安：学科 約55〜60% / 技能 約65〜70%</span>
-          <span class="meta-tag">試験：学科 ＋ 技能（実技）</span>
+        <button class="open-btn">合格対策を見る ▼</button>
+        <div class="advice">
+          <h3>合格対策・勉強法</h3>
+          <ul>
+            <li><strong>学科免除の活用：</strong>第三種電気主任技術者（電験三種）を先に持っていると、学科試験が免除されて実技だけで合格できます。</li>
+            <li><strong>学科試験：</strong>普通に受ける場合は過去問を数年分くり返し解きます。とくに配点が高い「配線図の問題」と、道具の写真を見て名前を選ぶ問題をしっかりおさえます。</li>
+            <li><strong>技能試験：</strong>事前に発表される13個の練習問題を、配線図（複線図）を書くところから練習します。本番の40分以内にミスなく作り終える練習をくり返します。</li>
+          </ul>
         </div>
-
-        <button type="button" class="toggle-btn" aria-expanded="false">
-          <span class="btn-text">合格対策を見る</span>
-          <span class="btn-icon">▼</span>
-        </button>
-
-        <div class="advice-wrapper">
-          <div class="advice-inner">
-            <div class="advice-box">
-              <h3>合格対策・勉強法</h3>
-              <ul>
-                <li><strong>学科免除の活用：</strong>第三種電気主任技術者（電験三種）を先に持っていると、学科試験が免除されて実技だけで合格できます。</li>
-                <li><strong>学科試験：</strong>普通に受ける場合は過去問を数年分くり返し解きます。とくに配点が高い「配線図の問題」と、道具の写真を見て名前を選ぶ問題をしっかりおさえます。</li>
-                <li><strong>技能試験：</strong>事前に発表される13個の練習問題を、配線図（複線図）を書くところから練習します。本番の40分以内にミスなく作り終える練習をくり返します。</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </article>
+      </div>
 
       <!-- 3. 第一級陸上無線技術士 -->
-      <article class="card card-comm" data-category="comm">
-        <div class="card-top">
-          <span class="badge badge-comm">無線・通信系</span>
+      <div class="card comm" data-type="comm">
+        <span class="badge">無線・通信系</span>
+        <h2>第一級陸上無線技術士</h2>
+        <p>テレビ局やラジオ局、スマホの基地局など、すべての陸上無線設備の技術操作ができる最上位の国家資格（一陸技）。</p>
+        <div class="tags">
+          <span class="tag rate">合格率の目安：約20〜30%</span>
+          <span class="tag">科目：工学基礎・工学A・工学B・法規</span>
         </div>
-        <h2 class="qual-title">第一級陸上無線技術士</h2>
-        <p class="qual-summary">テレビ局やラジオ局、スマホの基地局など、すべての陸上無線設備の技術操作ができる最上位の国家資格（一陸技）。</p>
-        <div class="meta-tags">
-          <span class="meta-tag meta-rate">合格率の目安：約20〜30%</span>
-          <span class="meta-tag">科目：工学基礎・工学A・工学B・法規</span>
+        <button class="open-btn">合格対策を見る ▼</button>
+        <div class="advice">
+          <h3>合格対策・勉強法</h3>
+          <ul>
+            <li><strong>他資格による科目免除：</strong>「工事担任者」を持っていれば1科目（無線工学の基礎）が免除になり、「電気通信主任技術者」を持っていれば2科目（無線工学の基礎・無線工学A）が免除になります。</li>
+            <li><strong>科目合格を使う：</strong>免除がない場合も、合格した科目が3年間有効になる仕組みを使います。まずは「無線工学の基礎」と暗記で点を取りやすい「法規」から先に合格をねらうのがおすすめです。</li>
+            <li><strong>過去問を最低10年分解く：</strong>過去問とまったく同じ問題や、数字を変えただけの問題がとても多く出ます。最低でも過去問10年分（20回分）をくり返し解いて、よく出る計算のパターンと法律のルールをまるごと覚えます。</li>
+          </ul>
         </div>
-
-        <button type="button" class="toggle-btn" aria-expanded="false">
-          <span class="btn-text">合格対策を見る</span>
-          <span class="btn-icon">▼</span>
-        </button>
-
-        <div class="advice-wrapper">
-          <div class="advice-inner">
-            <div class="advice-box">
-              <h3>合格対策・勉強法</h3>
-              <ul>
-                <li><strong>他資格による科目免除：</strong>「工事担任者」を持っていれば1科目（無線工学の基礎）が免除になり、「電気通信主任技術者」を持っていれば2科目（無線工学の基礎・無線工学A）が免除になります。</li>
-                <li><strong>科目合格を使う：</strong>免除がない場合も、合格した科目が3年間有効になる仕組みを使います。まずは「無線工学の基礎」と暗記で点を取りやすい「法規」から先に合格をねらうのがおすすめです。</li>
-                <li><strong>過去問を最低10年分解く：</strong>過去問とまったく同じ問題や、数字を変えただけの問題がとても多く出ます。最低でも過去問10年分（20回分）をくり返し解いて、よく出る計算のパターンと法律のルールをまるごと覚えます。</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </article>
+      </div>
 
       <!-- 4. 電気通信主任技術者（伝送交換主任技術者） -->
-      <article class="card card-comm" data-category="comm">
-        <div class="card-top">
-          <span class="badge badge-comm">無線・通信系</span>
+      <div class="card comm" data-type="comm">
+        <span class="badge">無線・通信系</span>
+        <h2>電気通信主任技術者（伝送交換主任技術者）</h2>
+        <p>通信会社のネットワーク設備の工事やメンテナンスを監督する国家資格。</p>
+        <div class="tags">
+          <span class="tag rate">合格率の目安：約25〜35%</span>
+          <span class="tag">科目：システム・伝送交換設備・法規</span>
         </div>
-        <h2 class="qual-title">電気通信主任技術者（伝送交換主任技術者）</h2>
-        <p class="qual-summary">通信会社のネットワーク設備の工事やメンテナンスを監督する国家資格。</p>
-        <div class="meta-tags">
-          <span class="meta-tag meta-rate">合格率の目安：約25〜35%</span>
-          <span class="meta-tag">科目：システム・伝送交換設備・法規</span>
+        <button class="open-btn">合格対策を見る ▼</button>
+        <div class="advice">
+          <h3>合格対策・勉強法</h3>
+          <ul>
+            <li><strong>工事担任者による1科目免除：</strong>「工事担任者（総合通信）」を持っていると、1科目（電気通信システム）が免除になり、残り2科目に集中できます。</li>
+            <li><strong>過去問を最低10年分解く：</strong>試験の形式や聞かれるポイントが過去問とよく似ているため、最低でも過去問10年分（20回分）をくり返し解いて、問題の出され方に慣れるのが一番大切です。</li>
+            <li><strong>よく出る分野をしぼる：</strong>光ファイバーやインターネットの仕組み、無線の技術に加えて、機械の故障率などを求める計算問題を確実に解けるように練習します。</li>
+          </ul>
         </div>
-
-        <button type="button" class="toggle-btn" aria-expanded="false">
-          <span class="btn-text">合格対策を見る</span>
-          <span class="btn-icon">▼</span>
-        </button>
-
-        <div class="advice-wrapper">
-          <div class="advice-inner">
-            <div class="advice-box">
-              <h3>合格対策・勉強法</h3>
-              <ul>
-                <li><strong>工事担任者による1科目免除：</strong>「工事担任者（総合通信）」を持っていると、1科目（電気通信システム）が免除になり、残り2科目に集中できます。</li>
-                <li><strong>過去問を最低10年分解く：</strong>試験の形式や聞かれるポイントが過去問とよく似ているため、最低でも過去問10年分（20回分）をくり返し解いて、問題の出され方に慣れるのが一番大切です。</li>
-                <li><strong>よく出る分野をしぼる：</strong>光ファイバーやインターネットの仕組み、無線の技術に加えて、機械の故障率などを求める計算問題を確実に解けるように練習します。</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </article>
+      </div>
 
       <!-- 5. 工事担任者（総合通信） -->
-      <article class="card card-comm" data-category="comm">
-        <div class="card-top">
-          <span class="badge badge-comm">無線・通信系</span>
+      <div class="card comm" data-type="comm">
+        <span class="badge">無線・通信系</span>
+        <h2>工事担任者（総合通信）</h2>
+        <p>光回線や電話回線にパソコンや通信機器をつなぐ工事・監督ができる最上位の国家資格。</p>
+        <div class="tags">
+          <span class="tag rate">合格率の目安：約25〜35%</span>
+          <span class="tag">科目：基礎・技術及び理論・法規</span>
         </div>
-        <h2 class="qual-title">工事担任者（総合通信）</h2>
-        <p class="qual-summary">光回線や電話回線にパソコンや通信機器をつなぐ工事・監督ができる最上位の国家資格。</p>
-        <div class="meta-tags">
-          <span class="meta-tag meta-rate">合格率の目安：約25〜35%</span>
-          <span class="meta-tag">科目：基礎・技術及び理論・法規</span>
+        <button class="open-btn">合格対策を見る ▼</button>
+        <div class="advice">
+          <h3>合格対策・勉強法</h3>
+          <ul>
+            <li><strong>過去問を最低10年分解く：</strong>3科目とも過去問とよく似た問題が多く出るため、最低でも過去問10年分（20回分）を何度も解いて問題のパターンに慣れるのが一番効果的です。</li>
+            <li><strong>基礎科目の計算に慣れる：</strong>はじめて学ぶ人がつまずきやすい「基礎」の電気回路やデジタル回路の計算は、基本の公式を覚えて練習問題をたくさん解くことで乗りきれます。</li>
+            <li><strong>取得後のメリット：</strong>この資格を持っていると、あとで「電気通信主任技術者」と「第一級陸上無線技術士」を受けるときに、それぞれ1科目ずつ免除になります。</li>
+          </ul>
         </div>
+      </div>
 
-        <button type="button" class="toggle-btn" aria-expanded="false">
-          <span class="btn-text">合格対策を見る</span>
-          <span class="btn-icon">▼</span>
-        </button>
-
-        <div class="advice-wrapper">
-          <div class="advice-inner">
-            <div class="advice-box">
-              <h3>合格対策・勉強法</h3>
-              <ul>
-                <li><strong>過去問を最低10年分解く：</strong>3科目とも過去問とよく似た問題が多く出るため、最低でも過去問10年分（20回分）を何度も解いて問題のパターンに慣れるのが一番効果的です。</li>
-                <li><strong>基礎科目の計算に慣れる：</strong>はじめて学ぶ人がつまずきやすい「基礎」の電気回路やデジタル回路の計算は、基本の公式を覚えて練習問題をたくさん解くことで乗りきれます。</li>
-                <li><strong>取得後のメリット：</strong>この資格を持っていると、あとで「電気通信主任技術者」と「第一級陸上無線技術士」を受けるときに、それぞれ1科目ずつ免除になります。</li>
-              </ul>
-            </div>
-          </div>
+      <!-- 6. 情報セキュリティマネジメント試験 -->
+      <div class="card it" data-type="it">
+        <span class="badge">IT・セキュリティ系</span>
+        <h2>情報セキュリティマネジメント試験</h2>
+        <p>ウイルスや不正アクセスから会社や組織の大切な情報を守るための知識を証明する国家資格（セキュマネ）。</p>
+        <div class="tags">
+          <span class="tag rate">合格率の目安：約60〜70%</span>
+          <span class="tag">形式：パソコン受験（科目A・科目B）</span>
         </div>
-      </article>
-
-      <!-- 6. 情報セキュリティマネジメント試験（セキュマネ） -->
-      <article class="card card-it" data-category="it">
-        <div class="card-top">
-          <span class="badge badge-it">IT・セキュリティ系</span>
+        <button class="open-btn">合格対策を見る ▼</button>
+        <div class="advice">
+          <h3>合格対策・勉強法</h3>
+          <ul>
+            <li><strong>用語のイメージをつかむ：</strong>ウイルス対策やパスワード管理など、カタカナの専門用語がたくさん出ます。丸暗記ではなく「どんなときに使う技術か」をイラスト付きの入門書でイメージしながら覚えます。</li>
+            <li><strong>長文問題（科目B）の練習：</strong>実際の会社でのトラブル事例を読んで答える長文問題が出ます。公開されているサンプル問題や過去問を時間を測って解き、問題文の中からヒントを探す練習をしておきます。</li>
+          </ul>
         </div>
-        <h2 class="qual-title">情報セキュリティマネジメント試験</h2>
-        <p class="qual-summary">ウイルスや不正アクセスから会社や組織の大切な情報を守るための知識を証明する国家資格（セキュマネ）。</p>
-        <div class="meta-tags">
-          <span class="meta-tag meta-rate">合格率の目安：約60〜70%</span>
-          <span class="meta-tag">形式：パソコン受験（科目A・科目B）</span>
-        </div>
+      </div>
 
-        <button type="button" class="toggle-btn" aria-expanded="false">
-          <span class="btn-text">合格対策を見る</span>
-          <span class="btn-icon">▼</span>
-        </button>
-
-        <div class="advice-wrapper">
-          <div class="advice-inner">
-            <div class="advice-box">
-              <h3>合格対策・勉強法</h3>
-              <ul>
-                <li><strong>用語のイメージをつかむ：</strong>ウイルス対策やパスワード管理など、カタカナの専門用語がたくさん出ます。丸暗記ではなく「どんなときに使う技術か」をイラスト付きの入門書でイメージしながら覚えます。</li>
-                <li><strong>長文問題（科目B）の練習：</strong>実際の会社でのトラブル事例を読んで答える長文問題が出ます。公開されているサンプル問題や過去問を時間を測って解き、問題文の中からヒントを探す練習をしておきます。</li>
-              </ul>
-            </div>
-          </div>
+      <!-- 7. 危険物取扱者 乙種 -->
+      <div class="card safe" data-type="safe">
+        <span class="badge">危険物・安全系</span>
+        <h2>危険物取扱者 乙種（第3類・第4類・第5類・第6類）</h2>
+        <p>ガソリンや薬品など、火災の危険がある物質の取り扱いや安全管理ができる国家資格。</p>
+        <div class="tags">
+          <span class="tag rate">合格率の目安：乙4 約35〜40% / 他類 約65〜75%</span>
+          <span class="tag">取得区分：乙3・乙4・乙5・乙6</span>
         </div>
-      </article>
-
-      <!-- 7. 危険物取扱者 乙種（第3類・第4類・第5類・第6類） -->
-      <article class="card card-safe" data-category="safe">
-        <div class="card-top">
-          <span class="badge badge-safe">危険物・安全系</span>
+        <button class="open-btn">合格対策を見る ▼</button>
+        <div class="advice">
+          <h3>合格対策・勉強法</h3>
+          <ul>
+            <li><strong>試験免除の仕組みを使う：</strong>最初に参考書が多い「乙種第4類」に合格すると、ほかの類を受けるときに「法律」と「物理・化学」の試験が免除されます。10問だけの試験で済むため、効率よくたくさんの類に合格できます。</li>
+            <li><strong>表にまとめて覚える：</strong>免除のあとに受ける「危険物の性質と火の消し方」は、類ごとの特徴（水に触れると燃える、熱に弱いなど）と消火方法の違いを表にまとめて覚えます。</li>
+          </ul>
         </div>
-        <h2 class="qual-title">危険物取扱者 乙種（第3類・第4類・第5類・第6類）</h2>
-        <p class="qual-summary">ガソリンや薬品など、火災の危険がある物質の取り扱いや安全管理ができる国家資格。</p>
-        <div class="meta-tags">
-          <span class="meta-tag meta-rate">合格率の目安：乙4 約35〜40% / 他類 約65〜75%</span>
-          <span class="meta-tag">取得区分：乙3・乙4・乙5・乙6</span>
-        </div>
-
-        <button type="button" class="toggle-btn" aria-expanded="false">
-          <span class="btn-text">合格対策を見る</span>
-          <span class="btn-icon">▼</span>
-        </button>
-
-        <div class="advice-wrapper">
-          <div class="advice-inner">
-            <div class="advice-box">
-              <h3>合格対策・勉強法</h3>
-              <ul>
-                <li><strong>試験免除の仕組みを使う：</strong>最初に参考書が多い「乙種第4類」に合格すると、ほかの類を受けるときに「法律」と「物理・化学」の試験が免除されます。10問だけの試験で済むため、効率よくたくさんの類に合格できます。</li>
-                <li><strong>表にまとめて覚える：</strong>免除のあとに受ける「危険物の性質と火の消し方」は、類ごとの特徴（水に触れると燃える、熱に弱いなど）と消火方法の違いを表にまとめて覚えます。</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </article>
+      </div>
 
       <!-- 8. 二級ボイラー技士 -->
-      <article class="card card-safe" data-category="safe">
-        <div class="card-top">
-          <span class="badge badge-safe">危険物・安全系</span>
+      <div class="card safe" data-type="safe">
+        <span class="badge">危険物・安全系</span>
+        <h2>二級ボイラー技士</h2>
+        <p>ビルや工場の暖房・給湯などに使う大型ボイラーの運転や点検を行うための国家資格。</p>
+        <div class="tags">
+          <span class="tag rate">合格率の目安：約50〜60%</span>
+          <span class="tag">要件：実技講習 ＋ 学科試験</span>
         </div>
-        <h2 class="qual-title">二級ボイラー技士</h2>
-        <p class="qual-summary">ビルや工場の暖房・給湯などに使う大型ボイラーの運転や点検を行うための国家資格。</p>
-        <div class="meta-tags">
-          <span class="meta-tag meta-rate">合格率の目安：約50〜60%</span>
-          <span class="meta-tag">要件：実技講習 ＋ 学科試験</span>
+        <button class="open-btn">合格対策を見る ▼</button>
+        <div class="advice">
+          <h3>合格対策・勉強法</h3>
+          <ul>
+            <li><strong>実技講習と過去問のセット：</strong>3日間の実技講習で本物のボイラーを見て仕組みをイメージしたあと、公開されている過去問（4〜6回分）をくり返し解きます。</li>
+            <li><strong>苦手科目を作らない：</strong>4つの分野すべてで40点以上（100点満点中）を取らないと不合格になるルールがあるため、苦手な分野を作らずバランスよく問題を解いて、ひっかけ問題に慣れておきます。</li>
+          </ul>
         </div>
-
-        <button type="button" class="toggle-btn" aria-expanded="false">
-          <span class="btn-text">合格対策を見る</span>
-          <span class="btn-icon">▼</span>
-        </button>
-
-        <div class="advice-wrapper">
-          <div class="advice-inner">
-            <div class="advice-box">
-              <h3>合格対策・勉強法</h3>
-              <ul>
-                <li><strong>実技講習と過去問のセット：</strong>3日間の実技講習で本物のボイラーを見て仕組みをイメージしたあと、公開されている過去問（4〜6回分）をくり返し解きます。</li>
-                <li><strong>苦手科目を作らない：</strong>4つの分野すべてで40点以上（100点満点中）を取らないと不合格になるルールがあるため、苦手な分野を作らずバランスよく問題を解いて、ひっかけ問題に慣れておきます。</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </article>
+      </div>
 
       <!-- 9. 潜水士 -->
-      <article class="card card-safe" data-category="safe">
-        <div class="card-top">
-          <span class="badge badge-safe">危険物・安全系</span>
+      <div class="card safe" data-type="safe">
+        <span class="badge">危険物・安全系</span>
+        <h2>潜水士</h2>
+        <p>ボンベなどの潜水器具を使って、水中での点検や工事などの仕事をするために必要な国家資格。</p>
+        <div class="tags">
+          <span class="tag rate">合格率の目安：約75〜85%</span>
+          <span class="tag">科目：潜水業務・送気浮上・高気圧障害・法令</span>
         </div>
-        <h2 class="qual-title">潜水士</h2>
-        <p class="qual-summary">ボンベなどの潜水器具を使って、水中での点検や工事などの仕事をするために必要な国家資格。</p>
-        <div class="meta-tags">
-          <span class="meta-tag meta-rate">合格率の目安：約75〜85%</span>
-          <span class="meta-tag">科目：潜水業務・送気浮上・高気圧障害・法令</span>
+        <button class="open-btn">合格対策を見る ▼</button>
+        <div class="advice">
+          <h3>合格対策・勉強法</h3>
+          <ul>
+            <li><strong>過去問題集を3周する：</strong>テキストをひと通り読んだあと、過去問題集を3周以上解いて、よく出る問題と数字のひっかけパターンを覚えるのが短期合格のコツです。</li>
+            <li><strong>計算と体のトラブルを中心に覚える：</strong>水の深さと水圧・空気のふくらみ方を求める計算問題や、急いで浮上したときに起きる「潜水病（減圧症）」などの予防法は必ず出るため、しっかり整理して覚えます。</li>
+          </ul>
         </div>
-
-        <button type="button" class="toggle-btn" aria-expanded="false">
-          <span class="btn-text">合格対策を見る</span>
-          <span class="btn-icon">▼</span>
-        </button>
-
-        <div class="advice-wrapper">
-          <div class="advice-inner">
-            <div class="advice-box">
-              <h3>合格対策・勉強法</h3>
-              <ul>
-                <li><strong>過去問題集を3周する：</strong>テキストをひと通り読んだあと、過去問題集を3周以上解いて、よく出る問題と数字のひっかけパターンを覚えるのが短期合格のコツです。</li>
-                <li><strong>計算と体のトラブルを中心に覚える：</strong>水の深さと水圧・空気のふくらみ方を求める計算問題や、急いで浮上したときに起きる「潜水病（減圧症）」などの予防法は必ず出るため、しっかり整理して覚えます。</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </article>
+      </div>
 
       <!-- 10. 一級小型船舶操縦士 -->
-      <article class="card card-marine" data-category="marine">
-        <div class="card-top">
-          <span class="badge badge-marine">海事・操縦系</span>
+      <div class="card marine" data-type="marine">
+        <span class="badge">海事・操縦系</span>
+        <h2>一級小型船舶操縦士</h2>
+        <p>クルーザーや漁船などの小型船で、距離の制限なく世界中の海を操縦できる国家資格。</p>
+        <div class="tags">
+          <span class="tag rate">合格率の目安：約85〜90%</span>
+          <span class="tag">試験：学科（一般＋上級）＋ 実技</span>
         </div>
-        <h2 class="qual-title">一級小型船舶操縦士</h2>
-        <p class="qual-summary">クルーザーや漁船などの小型船で、距離の制限なく世界中の海を操縦できる国家資格。</p>
-        <div class="meta-tags">
-          <span class="meta-tag meta-rate">合格率の目安：約85〜90%</span>
-          <span class="meta-tag">試験：学科（一般＋上級）＋ 実技</span>
+        <button class="open-btn">合格対策を見る ▼</button>
+        <div class="advice">
+          <h3>合格対策・勉強法</h3>
+          <ul>
+            <li><strong>学科（海図の書き方練習）：</strong>一級だけの試験として、海の地図（海図）に定規やコンパスを使って船が進むルートを書き込む問題が出ます。手順が決まっているので、何度も書いてやり方を覚えます。</li>
+            <li><strong>実技（声出しとイメージ練習）：</strong>安全確認の指さし確認、ロープの結び方（もやい結びなど）、船を岸につける操縦の手順を、声に出しながらイメージ練習して本番にのぞみます。</li>
+          </ul>
         </div>
-
-        <button type="button" class="toggle-btn" aria-expanded="false">
-          <span class="btn-text">合格対策を見る</span>
-          <span class="btn-icon">▼</span>
-        </button>
-
-        <div class="advice-wrapper">
-          <div class="advice-inner">
-            <div class="advice-box">
-              <h3>合格対策・勉強法</h3>
-              <ul>
-                <li><strong>学科（海図の書き方練習）：</strong>一級だけの試験として、海の地図（海図）に定規やコンパスを使って船が進むルートを書き込む問題が出ます。手順が決まっているので、何度も書いてやり方を覚えます。</li>
-                <li><strong>実技（声出しとイメージ練習）：</strong>安全確認の指さし確認、ロープの結び方（もやい結びなど）、船を岸につける操縦の手順を、声に出しながらイメージ練習して本番にのぞみます。</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </article>
+      </div>
     </div>
   </main>
 
-  <footer class="footer">
+  <footer>
     <p>&copy; 2026 My Qualification Guide</p>
   </footer>
 
